@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Merveille Mathis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .header {
+            background-color: #2C3E50;
+            color: #ECF0F1;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        .project, .gallery, .contact, .testimonials {
+            background-color: #ECF0F1;
+            margin: 10px 0;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .project {
+            border-left: 5px solid #2980B9;
+        }
+        .gallery {
+            border-left: 5px solid #27AE60;
+        }
+        .contact {
+            border-left: 5px solid #E74C3C;
+        }
+        .testimonials {
+            border-left: 5px solid #8E44AD;
+        }
+        .footer {
+            background-color: #2C3E50;
+            color: #ECF0F1;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .animate {
+            animation: fadeIn 3s;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #2980B9;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #3498DB;
+        }
+        .whatsapp-icon {
+            width: 30px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="header animate">
+        <h1>Portfolio de Merveille Mathis</h1>
+        <input type="text" id="search" placeholder="Rechercher..." onkeyup="searchFunction()">
+    </div>
+    <div class="content">
+        <h2>À propos de moi</h2>
+        <p>Je suis Merveille Mathis, un jeune passionné par le graphisme et tout projet de rédaction et d'innovation. Gmail : merveillemathis16@gmail.com | Contact: 43452649 | Facebook: <a href="https://www.facebook.com/merveille.Mathis">merveille.Mathis</a> | WhatsApp: <img src="whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon"> 43452649</p>
+        <h2>Mes Projets</h2>
+        <div class="project">
+            <h3>Projet 1</h3>
+            <p>Visite touristique à Cotonou au Bénin...</p>
+        </div>
+        <div class="project">
+            <h3>Projet 2</h3>
+            <p>Visite touristique à cotonou...</p>
+        </div>
+        <!-- Ajoute d'autres projets ici -->
+        
+        <h2>Galerie</h2>
+        <div class="gallery">
+            <img src="image1.jpg" alt="Projet " style="width:100%;height:auto;">
+            <img src="image2.jpg" alt="Projet " style="width:100%;height:auto;">
+            <!-- Ajoute d'autres images ici -->
+        </div>
+        
+        <h2>Témoignages</h2>
+        <div class="testimonials">
+            <p>"Excellent travail! Très satisfait de la qualité." - Mariam</p>
+            <p>"Professionnel et rapide. Je recommande vivement." - Jule</p>
+            <!-- Ajoute d'autres témoignages ici -->
+        </div>
+<h2>Contact</h2>
+        <div class="contact">
+            <form action="mailto:merveillemathis16@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Nom:</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message"></textarea><br><br>
+                <input type="submit" value="Envoyer">
+            </form>
+        </div>
+
+        <h2>Localisation</h2>
+        <div class="location">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4013.1163147351644!2d2.612809614933673!3d6.496857395287956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103a3d3652a6c16b%3A0x10a1e15485717bfe!2sPorto-Novo%2C+B%C3%A9nin!5e0!3m2!1sen!2sus!4v1613707982025!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <h2>Visite Touristique à Cotonou</h2>
+        <div class="tour">
+            <img src="flyer-cotonou.jpg" alt="Flyer de visite à Cotonou" style="width:100%;height:auto;">
+        </div>
+    </div>
+    <div class="footer">
+        <p>Contact: merveillemathis16@gmail.com | Suis-moi sur <a href="https://www.facebook.com/merveille.Mathis">Facebook</a> | WhatsApp: <img src="whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon"> 43452649</p>
+    </div>
+
+    <script>
+        function searchFunction() {
+            var input, filter, content, projects, project, i, txtValue;
+            input = document.getElementById('search');
+            filter = input.value.toUpperCase();
+            content = document.getElementsByClassName('content')[0];
+            projects = content.getElementsByClassName('project');
+
+            for (i = 0; i < projects.length; i++) {
+                project = projects[i];
+                txtValue = project.textContent || project.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    project.style.display = "";
+                } else {
+                    project.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
